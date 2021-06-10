@@ -90,8 +90,8 @@ void	draw_map(t_lon *lon)
 	set_new_image(&lon, "textures/bag.xpm", lon->sprite->image, 'C');
 	set_new_image(&lon, "textures/door.xpm", lon->door->image, 'E');
 	set_new_image(&lon, "textures/enemy.xpm", lon->door->image, 'W');
-	// mlx_key_hook(lon->mlx_win, deal_key, lon); // двигался только при нажатии кнопки
-	mlx_hook(lon->mlx_win, 2, 1L << 0, deal_key, lon); // чтобы двигался непрервыно
+	// mlx_key_hook(lon->mlx_win, deal_key, lon); // move one time when press key
+	mlx_hook(lon->mlx_win, 2, 1L << 0, deal_key, lon); // mowe while handing key
 	mlx_hook(lon->mlx_win, 17, 1L << 0, close_window, lon);
 	mlx_loop(lon->mlx);
 }
